@@ -31,15 +31,11 @@ int removeDuplicates(vector<int>& nums) {
 };
 
 int main() {
-Solution solution; 
-vector<int> nums = {0,0,1,1,1,2,2,3,3,4};
-int answer = solution.removeDuplicates(nums);
-cout << answer << endl;
-solution.mostrarResultado(nums); 
-cout << endl;
-vector<int> nums1 = {1,1,2};
-int answer1 = solution.removeDuplicates(nums1);
-cout << answer1 << endl;
-solution.mostrarResultado(nums1); 
-return 0;
+    if( 0.7 < 0.5 ){
+        cout << 1 << endl;
+    }
+    else{
+        cout << 0 << endl;
+    }
+    return 0;
 }
