@@ -37,12 +37,8 @@ int main() {
     Solution solution; 
     vector<int> digits = {1,2,3};
     imprimir(solution.plusOne(digits));
-
     vector<int> digits1 = {4,3,2,1};
-
     imprimir(solution.plusOne(digits1));
-
     vector<int> digits2 = {9};
-
     imprimir(solution.plusOne(digits2));
 }

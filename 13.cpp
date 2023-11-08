@@ -35,6 +35,7 @@ Given a roman numeral, convert it to an integer.
 class Solution {
 public:
     int romanToInt(string s) {
+        int result = 0;
         map<char,int> listValues = {
         {'I', 1},
         {'V', 5},
@@ -45,9 +46,15 @@ public:
         {'M', 1000}
         };
         int largeString = s.size();
-        for(int i = 0;i != largeString;i++){
-            
+        for(int i = 0;i != (largeString + 1); i++){
+            if(listValues[s[i]] >= listValues[s[i + 1]] ){
+                result += listValues[s[i]];
+            }
+            else{
+                result -= listValues[s[i]];
+            }
         }
+        return result;
     }
 };
 int main() {
@@ -57,8 +64,11 @@ int answer = solution.romanToInt(s);
 cout << "output: " << answer << endl; 
 string s1 = "LVIII";
 int answer1 = solution.romanToInt(s1);
-cout << "output: " << answer1;
+cout << "output: " << answer1 << endl;
 string s2 = "MCMXCIV";
 int answer2 = solution.romanToInt(s2);
-cout << "output: " << answer2;
+cout << "output: " << answer2 << endl;
+string s3 = "MMMDCCCLXXXVIII";
+int answer3 = solution.romanToInt(s3);
+cout << "output: " << answer3 << endl;
 }

@@ -1,2 +1,0 @@
-# leetCode
-Code algorithm training
