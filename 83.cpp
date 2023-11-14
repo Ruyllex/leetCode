@@ -8,6 +8,9 @@ Remove Duplicates from Sorted List
 
 
 Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+
+
+
 */
 
  struct ListNode {
@@ -22,15 +25,13 @@ class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
         ListNode* aux = head;
-    while (aux->next != nullptr) {
-        if (aux->val == aux->next->val) {
-            ListNode* auxNew = aux->next;
-            delete aux;
-            aux = auxNew;
-        }
-        else{
-            aux = aux->next;
-        }
+        int value = aux->val;
+        while(aux != nullptr){
+            if( value == aux->next->val ){
+                ListNode* auxNew = aux->next; 
+                aux->next = nullptr;
+                aux = auxNew;
+            }
         }
         return aux;
     }
@@ -51,9 +52,10 @@ int main(){
     ListNode* nodo3 = new ListNode(2);
     nodo1->next = nodo2;
     nodo2->next = nodo3;
-    ListNode* result = solution.deleteDuplicates(nodo1);
-    printList(result);
+    //ListNode* result = solution.deleteDuplicates(nodo1);
+    printList(nodo1);
     delete nodo1;
     delete nodo2;
     delete nodo3;
 }
+

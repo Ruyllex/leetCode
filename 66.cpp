@@ -16,19 +16,38 @@ Increment the large integer by one and return the resulting array of digits.
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
-        int lastIndex = digits.size() - 1;
-        digits[lastIndex]++;
-        if(digits[lastIndex] == 10){
-            digits[lastIndex];
+        int largoVector = digits.size();
+        if(largoVector == 1){
+            if(digits[0] == 9){
+                return {1,0};
+            }
+            else{
+                digits[0] += 1;
+            }
         }
-        return digits;
-    }
+        else{
+            digits[largoVector - 1] += 1;
+            for(int i = (largoVector - 1); i != -1; i-- ){
+                if(digits[i] == 10){
+                    digits[i] = 0;
+                    if(i == 0){
+                        digits.insert(digits.begin(),1);
+                        }
+                    else{
+                        digits[i - 1] += 1;
+                        }
+                    }
+                }
+            }
+            return digits;
+        }
+
 };
 
 
 void imprimir(vector<int> digits){
     for(int i = 0; i != digits.size(); i++){
-        cout << digits[i];
+        cout << to_string(digits[i]) + ",";
     }
     cout << endl;
 }
@@ -41,4 +60,6 @@ int main() {
     imprimir(solution.plusOne(digits1));
     vector<int> digits2 = {9};
     imprimir(solution.plusOne(digits2));
+    vector<int> digits3 = {9,9};
+    imprimir(solution.plusOne(digits3));
 }
