@@ -13,7 +13,7 @@ Given a string s, find the first non-repeating character in it and return its in
 class Solution {
 public:
     int firstUniqChar(string s) {
-        
+        return 0;
     }
 };
 int main(){
