@@ -11,13 +11,14 @@ Given an integer array nums, rotate the array to the right by k steps, where k i
 
 */
 
-void insert( vector<int>& nums , int FirstValue, int LastValue, int largeVector  ){
+void insert( vector<int>& nums , int LastValue, int largeVector  ){
     vector<int>*Copy = new vector<int>[largeVector];
-    for(int i = 1; i != (largeVector - 1); ++i){
-        Copy[i] = (*nums)[i];
+    Copy->push_back(LastValue);
+    for(int i = 0; i != (largeVector - 1); i++){
+      Copy->push_back(nums[i]);
     }
+    nums = *Copy;
     delete[] Copy;
-
 }
 
 
@@ -26,8 +27,8 @@ public:
     void rotate(vector<int>& nums, int k) {
         int largeVector = nums.size();
         for(int i = 0; i != k; i++){
-            int FirstValue = nums[0];
             int LastValue = nums[largeVector - 1];
+            insert(nums,LastValue,largeVector);
         }
         for(int i = 0; i != largeVector; i ++){
             cout << nums[i] << " ";
