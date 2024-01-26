@@ -6,9 +6,13 @@ using namespace std;
 class Solution {
 public:
     int test(){
-        int number = 64;
-        number <<= 3;
-        cout << number << endl;
+        if(0000 ^ 0001){
+            cout << "true" << endl;
+        }
+        else{
+            cout << "false" << endl;
+        }
+
     }
 };
 
