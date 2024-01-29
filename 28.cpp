@@ -15,29 +15,17 @@ or -1 if needle is not part of haystack.
 class Solution {
 public:
     int strStr(string haystack, string needle) {
-        int posibleSolution = -1;
-        bool primeraPasada = false;
-        int j = 0;
-        int k = 0;
-        for(int i = 0; i != haystack.size();i++){
-            if(haystack[i] == needle[j]){
-                while( haystack[i] == needle[k] && k != needle.size() ){
-                    if(!primeraPasada){
-                        posibleSolution = i;
-                        primeraPasada = true;
-                    }
-                    k++;
-                }
-                if(k == needle.size()){
-                    break;
-                }
-                k = 0;
+        if (needle.size() > haystack.size()) return -1;
+        for (int i = 0; i <= haystack.size() - needle.size(); ++i) {
+            int j = 0;
+            while (j < needle.size() && haystack[i + j] == needle[j]) {
+                ++j;
             }
-            }
-        return posibleSolution;
+            if (j == needle.size()) return i; 
         }
-    };
-
+        return -1; 
+    }
+};
 
 
 int main() {
@@ -54,4 +42,8 @@ int main() {
     string needle2 = "issip";
     int answer2 = solution.strStr(haystack2, needle2);
     cout << "output: " << answer2 << endl;
+    string haystack3 = "mississippi";
+    string needle3 = "sipp";
+    int answer3 = solution.strStr(haystack3, needle3);
+    cout << "output: " << answer3 << endl;
     }
