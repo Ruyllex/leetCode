@@ -6,19 +6,13 @@ using namespace std;
 class Solution {
 public:
     int test(){
-        if(0000 ^ 0001){
-            cout << "true" << endl;
-        }
-        else{
-            cout << "false" << endl;
-        }
-
+        return 'b' - 97;
     }
 };
 
 int main() {
     Solution solution;
-    solution.test();
+    cout << solution.test() << endl;
     return 0;
 }
 
