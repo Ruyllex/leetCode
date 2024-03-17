@@ -42,4 +42,6 @@ int main() {
     cout << "answer: " << solution.lengthOfLongestSubstring(s1) << endl;
     string s2 = "pwwkew";
     cout << "answer: " << solution.lengthOfLongestSubstring(s2) << endl;
+    cout << "hola esto es una prueba de vim" << endl;
 }
+

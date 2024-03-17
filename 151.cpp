@@ -19,21 +19,27 @@ The returned string should only have a single space separating the words. Do not
 class Solution {
 public:
     string reverseWords(string s) {
-        vector<string> aux;
-        string result;
-        for( int i = 0; i != s.size( ); i++ ){
+        vector<string> wordList;
+        string result = "";
+        string auxStr;
+        s = s + " ";
+        for(int i = 0; i != s.size();i++){
             if(s[i] != ' '){
-                for(int j = i; j != s.size(); j++){
-                    if(s[j] == ' '){
-                        aux.push_back(string(s.begin() + i, s.begin() + j));
-                    }
+                auxStr += s[i];
+            }
+            else{
+                if(auxStr != ""){
+                    wordList.push_back(auxStr);
+                    auxStr = "";
                 }
             }
         }
-        for(int k = 0; k != aux.size(); k++){
-            result += aux[k];
+
+        for(int j = (wordList.size() - 1) ; j != -1; j--){
+            result += wordList[j] + " ";
+
         }
-        return result;
+        return result.substr(0, result.size() - 1);;
     }
 };
 

@@ -71,4 +71,8 @@ cout << "output: " << answer2 << endl;
 string s3 = "MMMDCCCLXXXVIII";
 int answer3 = solution.romanToInt(s3);
 cout << "output: " << answer3 << endl;
+string s4= "DCCLXXXIX";
+int answer4 = solution.romanToInt(s4);
+cout << "output: " << answer4 << endl;
+
 }
