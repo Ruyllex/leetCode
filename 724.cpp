@@ -35,7 +35,7 @@ int calculateValueRight(vector<int> nums,int pivot){
     }
     return sum;
 }
-
+    
 
 class Solution {
 public:
