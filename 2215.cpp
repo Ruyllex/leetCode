@@ -20,7 +20,9 @@ Note that the integers in the lists may be returned in any order.
 class Solution {
 public:
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
+        vector<vector<int>> response = {{1,2,3},{1,4,2}};
         
+        return response;
     }
 };
 void printVector(vector<vector<int>>& vect){
@@ -29,6 +31,7 @@ void printVector(vector<vector<int>>& vect){
             cout << i[x];
         }
     }
+    cout << endl;
 }
 
 
@@ -36,9 +39,10 @@ int main(){
     Solution solution;
     vector<int> nums1 = {1,2,3};
     vector<int> nums2 = {2,4,6};
-    printVector(solution.findDifference(nums1,nums2));
+    vector<vector<int>> answer = solution.findDifference(nums1,nums2);
+    printVector(answer);
     vector<int> nums3 = {1,2,3,3};
     vector<int> nums4 = {1,1,2,2};
-    
-
+    vector<vector<int>> answer1 = solution.findDifference(nums3,nums4);
+    printVector(answer1);
 }
