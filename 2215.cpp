@@ -19,10 +19,37 @@ Note that the integers in the lists may be returned in any order.
 
 class Solution {
 public:
+    void borrarRepetidos(std::vector<int>& array) {
+        sort(array.begin(), array.end());
+        array.erase(unique(array.begin(), array.end()), array.end());
+    }
+    void borrarElemento(vector<int>& vector, int elemento) {
+        vector.erase(remove(vector.begin(), vector.end(), elemento), vector.end());
+    }
+    bool check(vector<int> nums, int x){
+        for(int j = 0; j != nums.size(); j++){
+            if(nums[j] == x){
+                return true;
+            }
+        }
+        return false;
+
+    }
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
-        vector<vector<int>> response = {{1,2,3},{1,4,2}};
-        
-        return response;
+        vector<int> nums1Copy = nums1;
+        for(int i : nums1Copy){
+            if( check(nums2, i) ){
+                int aux = i;
+                borrarElemento(nums1,aux);
+                borrarElemento(nums2,aux);
+            }
+        }
+        vector<vector<int>> answer;
+        borrarRepetidos(nums1);
+        borrarRepetidos(nums2);
+        answer.push_back(nums1);
+        answer.push_back(nums2);
+        return answer;
     }
 };
 void printVector(vector<vector<int>>& vect){
