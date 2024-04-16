@@ -5,7 +5,6 @@
 #include <string>
 #include <unordered_set>
 
-
 using namespace std;
 /*
 Number of Good Pairs
