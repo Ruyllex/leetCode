@@ -2,58 +2,51 @@
 #include <vector>
 #include <algorithm>
 #include <string>
-using namespace std;
-
-#include <iostream>
-#include <vector>
-#include <string>
+#include <cctype>
+#include <map>
 
 using namespace std;
 
-int compress(vector<char>& chars) {
-    if (chars.size() == 1) {
-        return 1;
+
+struct comparadorAlfabetico {
+    bool operator()(char a, char b) const {
+        return a < b;
     }
+};
 
-    char aux = chars[0];
-    int count = 1;
-    int writeIndex = 0;
 
-    for (int i = 1; i < chars.size(); i++) {
-        if (aux == chars[i]) {
-            count++;
-        } else {
-            chars[writeIndex++] = aux;
-            if (count > 1) {
-                string countStr = to_string(count);
-                for (char c : countStr) {
-                    chars[writeIndex++] = c;
-                }
-            }
-            aux = chars[i];
-            count = 1;
+
+template <typename KeyType, typename ValueType>
+char todosValoresIguales(const map<KeyType, ValueType,comparadorAlfabetico>& mapa1, const map<KeyType, ValueType,comparadorAlfabetico>& mapa2) {
+    for (const auto& par : mapa1) {
+        auto it = mapa2.find(par.first);
+        if (it == mapa2.end() || it->second != par.second) {
+            return par.first;
         }
     }
-
-    chars[writeIndex++] = aux;
-    if (count > 1) {
-        string countStr = to_string(count);
-        for (char c : countStr) {
-            chars[writeIndex++] = c;
-        }
-    }
-
-    chars.resize(writeIndex); // Redimensionar el vector para eliminar los caracteres adicionales
-
-    return writeIndex;
 }
 
-int main() {
-    vector<char> chars = {'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c', 'c'};
-    cout << "Longitud comprimida: " << compress(chars) << endl;
-    for (char c : chars) {
-        cout << c << " ";
+map<char,int,comparadorAlfabetico> fillMap(string s){
+    map<char,int,comparadorAlfabetico> MAP;
+    for(int i = 0; i != s.size();i++){
+        if(!MAP[s[i]]){
+            MAP[s[i]] = 0;
+        }
+        else{
+            MAP[s[i]]++;
+        }
     }
-    cout << endl;
+}
+
+template<typename KeyType, typename ValueType>
+void imprimirMapa(const map<KeyType, ValueType,comparadorAlfabetico>& mapa) {
+    for (const auto& par : mapa) {
+        cout << par.first << ": " << par.second << endl;
+    }
+}
+int main() {
+    string x = "wodweddwdwvrtvboh";
+    map<char,int,comparadorAlfabetico> MAP = fillMap(x);
+    imprimirMapa(MAP);
     return 0;
 }
