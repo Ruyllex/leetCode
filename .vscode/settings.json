@@ -45,5 +45,6 @@
         "unordered_set": "cpp",
         "set": "cpp"
     },
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "java.debug.settings.onBuildFailureProceed": true
 }
