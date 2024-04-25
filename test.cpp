@@ -7,46 +7,14 @@
 
 using namespace std;
 
-
-struct comparadorAlfabetico {
-    bool operator()(char a, char b) const {
-        return a < b;
-    }
-};
-
-
-
-template <typename KeyType, typename ValueType>
-char todosValoresIguales(const map<KeyType, ValueType,comparadorAlfabetico>& mapa1, const map<KeyType, ValueType,comparadorAlfabetico>& mapa2) {
-    for (const auto& par : mapa1) {
-        auto it = mapa2.find(par.first);
-        if (it == mapa2.end() || it->second != par.second) {
-            return par.first;
-        }
-    }
+int tribonacci(int n) {
+    if (n == 0)
+        return 0;
+    if (n == 1 || n == 2)
+        return 1;
+    return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
 }
 
-map<char,int,comparadorAlfabetico> fillMap(string s){
-    map<char,int,comparadorAlfabetico> MAP;
-    for(int i = 0; i != s.size();i++){
-        if(!MAP[s[i]]){
-            MAP[s[i]] = 0;
-        }
-        else{
-            MAP[s[i]]++;
-        }
-    }
-}
-
-template<typename KeyType, typename ValueType>
-void imprimirMapa(const map<KeyType, ValueType,comparadorAlfabetico>& mapa) {
-    for (const auto& par : mapa) {
-        cout << par.first << ": " << par.second << endl;
-    }
-}
 int main() {
-    string x = "wodweddwdwvrtvboh";
-    map<char,int,comparadorAlfabetico> MAP = fillMap(x);
-    imprimirMapa(MAP);
-    return 0;
+    cout << tribonacci(6);
 }
