@@ -1,6 +1,4 @@
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /*
 Defanging an IP Address
@@ -22,5 +20,6 @@ public class $1108{
     public void testdefangIpPaddr1(){
         String address = "255.100.50.0";
         String ans = "255[.]100[.]50[.]0";
+        assert ans.equals($1108.defangIPaddr(address));
     }
 }
