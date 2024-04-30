@@ -43,7 +43,8 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "unordered_set": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "stdio.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "java.debug.settings.onBuildFailureProceed": true
