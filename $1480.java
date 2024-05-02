@@ -1,6 +1,11 @@
 import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
+/*
+Running Sum of 1d Array
 
+Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+Return the running sum of nums.
+*/
 public class $1480 {
     public static int[] runningSum(int[] nums) {
         int[] ans = new int[nums.length];
