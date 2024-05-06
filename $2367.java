@@ -7,17 +7,21 @@ You are given a 0-indexed, strictly increasing integer array nums and a positive
 A triplet (i, j, k) is an arithmetic triplet if the following conditions are met:
 */
 
+import java.util.HashMap;
+
 class $2367 {
     public static int arithmeticTriplets(int[] nums, int diff) {
-        int ans = 0;
-        for(int i = 0; i != nums.length; i++){
-            for(int j = i; j != nums.length; j++){
-                if((nums[i] - nums[j]) == diff){
-                    ans++;
-                }
+        HashMap<Integer, Integer> seen = new HashMap<>();
+        int counter = 0;
+        for (int i = 0; i < nums.length; i++) {
+            seen.put(nums[i], i);
+        }
+        for (int num : nums) {
+            if (seen.containsKey(num + diff) && seen.containsKey(num + 2 * diff)) {
+                counter++;
             }
         }
-        return ans;
+        return counter;
     }
     @Test
     public void testArithMeticTriplets(){

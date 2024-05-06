@@ -43,7 +43,6 @@ string quitarLetrasRepetidas(const string& cadena) {
 
 class Solution {
 public:
-
     string decodeMessage(const string& key, const string& message) {
         map<char, char> alphabetMap;
         string alphabet = "abcdefghijklmnopqrstuvwxyz"; 
