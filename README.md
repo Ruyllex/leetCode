@@ -2,14 +2,6 @@
 
 Welcome to the repository of solved LeetCode problems.
 
-![LeetCode Logo](https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode Logo" style="width: 200px; height: auto;">
 
-## Problems by Category:
-
-- Array
-- String
-- Linked List
-
-## Contribution
-
-Feel free to contribute to this repository by solving more LeetCode problems and adding your solutions!
+This is a repository where I have all my leetcode solutions.
