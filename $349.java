@@ -1,7 +1,5 @@
 
 import static org.junit.Assert.assertArrayEquals;
-
-import java.lang.reflect.InaccessibleObjectException;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.Test;

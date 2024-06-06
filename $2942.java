@@ -48,7 +48,7 @@ public class $2942  {
     public void testFindWordsContaning3(){
         String [] words = {"abc","bcd","aaaa","cbc"};
         char x = 'z';
-        List<Integer> ans = new ArrayList<>(List.of(0,2));
+        List<Integer> ans = new ArrayList<>(List.of());
         assertEquals(ans, $2942.findWordsContaining(words,x));
     }
 
