@@ -1,33 +1,16 @@
 public class test {
     public static void main(String[] args) {
-        System.out.println(squareIsWhite("a1"));
+        System.out.println(shift("a5"));
     }
-    public static boolean check(char s){
-        String aux = "dbfh";
-        for(int i = 0; i != aux.length();i++){
-            if(s == aux.charAt(i)){
-                return true;
-                }
-        }
-        return false;
-    }
-    public static boolean squareIsWhite(String coordinates) {
-        if(check(coordinates.charAt(0))){
-            if((int)coordinates.charAt(1) % 2 == 0){
-                return false;
-            }
-            else{
-                return true;
-            }
-            }
-            else{
-                if((int)coordinates.charAt(1) % 2 == 0){
-                    return true;
-                    }
-                else{
-                    return false;
-                }
+    public static char shift(String s){
+        String dic = "abcdefghijklmnopqrstuvwxyz";
+        for(int i = 0 ; i != dic.length();i++){
+            if(dic.charAt(i) == (s.charAt(0))){
+
+             return dic.charAt(i + Integer.parseInt(s.substring(1))); 
             }
         }
+        return 'a';
+    }
 }
 

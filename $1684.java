@@ -1,9 +1,14 @@
 import static org.junit.Assert.assertEquals;
-
 import java.util.HashSet;
 import java.util.Set;
-
 import org.junit.Test;
+/*
+Count the Number of Consistent Strings
+
+You are given a string allowed consisting of distinct characters and an array of strings words. 
+A string is consistent if all characters in the string appear in the string allowed.
+Return the number of consistent strings in the array words.
+*/
 
 public class $1684  {
     public static boolean check(String s, String allowed){
