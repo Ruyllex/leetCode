@@ -18,7 +18,7 @@ Notice that you may not slant the container.
 
 class Solution {
 public:
-    int maxArea(std::vector<int>& height) {
+    int maxArea(vector<int>& height) {
         int max_area = 0;
         int left = 0;
         int right = height.size() - 1;
@@ -35,7 +35,6 @@ public:
         return max_area;
     }
 };
-
 
 int main(){
     Solution solution;
