@@ -1,13 +1,4 @@
-def decorador_saludo(func):
-    def wrapper(nombre):
-        print("Hola", end=' ')
-        func(nombre)
-        print("¡Bienvenido!")
-    return wrapper
-
-@decorador_saludo
-def saludar(nombre):
-    print(nombre)
-
-# Uso del decorador
-saludar("Juan")
+nombres = ["Ruy","Gonza","Lean","Dan","Eduardo","Facundo"]
+notas = [10,9,5,6,3,7]
+for i in range(0,len(nombres)):
+    print("nombre: " + nombres[i] + " Nota: " + str(notas[i]))
