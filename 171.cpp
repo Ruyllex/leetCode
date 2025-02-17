@@ -14,11 +14,8 @@ class Solution {
 public:
     int titleToNumber(string columnTitle) {
         int result = 0;
-        char letra;
-        for(int i = 0; i != columnTitle.size(); i++){
-            letra = tolower(columnTitle[i]);
-            result = result + (letra - 97)*27*i;
-            if(i == 0) result += letra - 96;
+        for(int i = 0; i < columnTitle.size(); i++){
+            result = result * 26 + (columnTitle[i] - 'A' + 1);
         }
         return result;
     }
@@ -27,9 +24,9 @@ public:
 int main(){
     Solution solution;
     string s = "A";
-    cout << solution.titleToNumber(s) << endl;
+    cout << solution.titleToNumber(s) << endl; // Output: 1
     string s1 = "AB";
-    cout << solution.titleToNumber(s1) << endl;
+    cout << solution.titleToNumber(s1) << endl; // Output: 28
     string s3 = "ZY";
-    cout << solution.titleToNumber(s3) << endl;
+    cout << solution.titleToNumber(s3) << endl; // Output: 701
 }
